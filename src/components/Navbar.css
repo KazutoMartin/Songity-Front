@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
+.header {
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  width: 100%;
+}
+
+.logo {
+  margin-left: 30px;
+  font-family: "Indie Flower", cursive;
+  font-size: 2rem;
+}
+
+.item {
+  margin-right: 50px;
+  font-family: "Staatliches", cursive;
+  font-size: 1.5rem;
+}
+.darkmode-toggle {
+  margin-right: 50px;
+  font-family: "Staatliches", cursive;
+  font-size: 1.5rem;
+}
+
+.item:after {
+  display: block;
+  content: "";
+  border-bottom: solid 3px #ffff;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+.item:hover:after {
+  transform: scaleX(1);
+}
+.item.fromRight:after {
+  transform-origin: 100% 50%;
+}
+.item.fromLeft:after {
+  transform-origin: 0% 50%;
+}

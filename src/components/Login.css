@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+
+.Login {
+  overflow: hidden;
+}
+
+.login-title {
+  font-family: "Staatliches", cursive;
+  font-size: 5rem;
+  color: white;
+}

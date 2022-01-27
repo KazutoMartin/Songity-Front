@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+
+.logo-mobile {
+  font-family: "Press Start 2P", cursive;
+  font-size: 2rem;
+  margin-left: 0;
+  align-self: center;
+}
+
+.item {
+  margin-right: 50px;
+  font-family: "Staatliches", cursive;
+  font-size: 1.5rem;
+}
