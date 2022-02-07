@@ -8,6 +8,7 @@ import Navbar from "../components/Navbar";
 import headphoneIcon from "../assets/headphones.svg";
 import Footer from "../components/Footer";
 import { gsap } from "gsap";
+import { motion } from "framer-motion";
 
 const Home = () => {
   const [value, updateCookie, deleteCookie] = useCookie("token");
@@ -28,7 +29,7 @@ const Home = () => {
         // ease: "back.out(1.7)",
         ease: "elastic.out(1, 0.4)",
       },
-      0
+      0.75
     );
     tl.from(
       [text2.current],
@@ -40,7 +41,7 @@ const Home = () => {
         duration: 2.5,
         ease: "elastic.out(1, 0.4)",
       },
-      0
+      0.75
     );
     const requestOptions = {
       method: "GET",
@@ -58,42 +59,49 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-      <Navbar />
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, rotate: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.75 }}
+    >
+      <div>
+        <Navbar />
 
-      <div
-        // style={{ backgroundImage: `url(${headphone})` }}
-        className="flex flex-row welcome-section h-screen w-screen md:bg-cover bg-contain bg-no-repeat bg-lightHeadphone dark:bg-darkHeadphone"
-      >
-        <Footer />
-        <div className="flex justify-center w-1/2 h-screen items-center p-10">
-          <div className="justify-start flex-col" ref={text1}>
-            <h1 className="text-3xl sm:text-5xl text-black dark:text-white">
-              Find
-              <br /> Your <br /> Favorite
-              <br /> Songs !
-            </h1>
-            <p className="text-left mt-5 text-black dark:text-white font-light md:w-9/12 w-11/12 text-base">
-              Explore the crypto world. Buy and sell cryptocurrencies easily on
-              Krypto.
-            </p>
-            <img className="w-10 h-10" src={headphoneIcon} alt="React Logo" />
+        <div
+          // style={{ backgroundImage: `url(${headphone})` }}
+          className="flex flex-row welcome-section h-screen w-screen md:bg-cover bg-contain bg-no-repeat bg-lightHeadphone dark:bg-darkHeadphone"
+        >
+          <Footer />
+          <div className="flex justify-center w-1/2 h-screen items-center p-10">
+            <div className="justify-start flex-col" ref={text1}>
+              <h1 className="home-title text-3xl sm:text-5xl text-black dark:text-white">
+                Find
+                <br /> Your <br /> Favorite
+                <br /> Songs !
+              </h1>
+              <p className="text-left mt-5 text-black dark:text-white font-light md:w-9/12 w-11/12 text-base">
+                Explore the crypto world. Buy and sell cryptocurrencies easily
+                on Krypto.
+              </p>
+              <img className="w-10 h-10" src={headphoneIcon} alt="React Logo" />
+            </div>
           </div>
-        </div>
-        <div className="flex justify-end w-1/2 h-screen items-center">
-          <div className="justify-start flex-col" ref={text2}>
-            <h1 className="text-3xl sm:text-5xl text-black dark:text-white">
-              Song <br /> Suggestion <br /> Based On
-              <br /> Your MBTI Type!
-            </h1>
-            <p className="text-left mt-5 text-black dark:text-white font-light md:w-9/12 w-11/12 text-base">
-              Explore the crypto world. Buy and sell cryptocurrencies easily on
-              Krypto.
-            </p>
+          <div className="flex justify-end w-1/2 h-screen items-center">
+            <div className="justify-start flex-col" ref={text2}>
+              <h1 className="home-title text-4xl sm:text-5xl text-black dark:text-white">
+                Song <br /> Suggestion <br /> Based On
+                <br /> Your MBTI Type!
+              </h1>
+              <p className="text-left mt-5 text-black dark:text-white font-light md:w-9/12 w-11/12 text-base">
+                Explore the crypto world. Buy and sell cryptocurrencies easily
+                on Krypto.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 export default Home;
