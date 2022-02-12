@@ -7,6 +7,7 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import logo from "../assets/login-bg.jpg";
 import { HiMenu } from "react-icons/hi";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
+import List from "../assets/list.svg";
 
 const Navbar = () => {
   const [darkTheme, setDarkTheme] = useState(false);
@@ -69,13 +70,27 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="flex md:hidden flex-row">
+      <div className="flex md:hidden flex-row justify-between p-3">
         {/* <div className="p-2 w-full flex flex-row justify-between items-center shadow-md"> */}
-        <HiMenu
+        {/* <HiMenu
           fontSize={60}
           className="cursor-pointer"
           onClick={() => setToggleSidebar(true)}
+        /> */}
+        <img
+          className="w-10 h-10"
+          src={List}
+          alt="React Logo"
+          onClick={() => setToggleSidebar(true)}
         />
+
+        <div className="darkmode-toggle">
+          <DarkModeSwitch
+            checked={darkTheme}
+            onChange={() => setDarkTheme(!darkTheme)}
+            size={50}
+          />
+        </div>
         {/* <Link to={`user-profile/${user?._id}`}>
             <img
               src={user?.image}

@@ -6,7 +6,7 @@ import telegram from "../assets/social-media-icons/telegram-logo.svg";
 import instagram from "../assets/social-media-icons/instagram-logo.svg";
 import { gsap } from "gsap";
 
-function Footer() {
+function MobileFooter() {
   const menuItemRef0 = useRef();
   const menuItemRef1 = useRef();
   const menuItemRef2 = useRef();
@@ -73,7 +73,7 @@ function Footer() {
   }, []);
 
   return (
-    <div className="fixed flex-col align-center h-screen justify-center p-5 hidden md:flex">
+    <div className="fixed flex flex-row justify-between w-screen p-5 md:hidden bottom-0">
       <a
         href="https://www.instagram.com/matin.martiny"
         target="_blank"
@@ -125,4 +125,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default MobileFooter;
