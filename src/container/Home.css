@@ -1,7 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Prompt&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
 .home-title {
   font-family: "Staatliches", cursive;
+}
+
+.button-choice-text {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+.form-title {
+  font-family: "PT Sans", sans-serif;
 }

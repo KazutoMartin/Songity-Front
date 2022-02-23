@@ -2,11 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import { useCookie } from "react-use";
 import "./Home.css";
-import headphone from "../assets/headphone.jpg";
-import headphoneDark from "../assets/headphone-dark.PNG";
 import Navbar from "../components/Navbar";
 import headphoneIcon from "../assets/headphones.svg";
-
 import Footer from "../components/Footer";
 import { gsap } from "gsap";
 import { motion } from "framer-motion";
@@ -16,6 +13,7 @@ import { FcGoogle } from "react-icons/fc";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import MobileFooter from "../components/MobileFooter";
+import SForm from "../components/SForm";
 
 const Home = () => {
   const [value, updateCookie, deleteCookie] = useCookie("token");
@@ -37,7 +35,7 @@ const Home = () => {
         // ease: "back.out(1.7)",
         ease: "elastic.out(1, 0.4)",
       },
-      0.75
+      2
     );
     tl.from(
       [text2.current],
@@ -49,7 +47,7 @@ const Home = () => {
         duration: 2.5,
         ease: "elastic.out(1, 0.4)",
       },
-      0.75
+      2
     );
   }, []);
 
@@ -158,6 +156,26 @@ const Home = () => {
           // style={{ backgroundImage: `url(${headphone})` }}
           className="flex flex-row welcome-section h-screen w-screen"
         >
+          {!User && (
+            <div className="shadow-2xl md:hidden fixed bottom-24 ml-24 w-screen">
+              <GoogleLogin
+                clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+                render={(renderProps) => (
+                  <button
+                    cookiePolicy="single_host_origin"
+                    onClick={renderProps.onClick}
+                    type="button"
+                    className="dark:bg-mainColor w-1/2 bg-black justify-center p-4 flex items-center rounded-lg outline-none dark:text-black text-white"
+                  >
+                    <FcGoogle className="mr-4 w-7 h-7" />
+                    Sign in
+                  </button>
+                )}
+                onSuccess={onGoogleLoginSuccess}
+                onFailure={responseGoogle}
+              ></GoogleLogin>
+            </div>
+          )}
           <Footer />
           <MobileFooter />
           <div className="flex justify-center w-1/2 h-screen items-center p-10">
@@ -175,10 +193,11 @@ const Home = () => {
           </div>
           <div className="flex justify-center w-1/2 h-screen items-center ">
             {User ? (
-              <div className="justify-start flex-col" ref={text2}>
-                <h1 className="home-title text-4xl sm:text-5xl text-black dark:text-white">
-                  It is gonna be a form
-                </h1>
+              <div
+                className="justify-start flex md:w-1/2 h-1/2 w-full items-center justify-center"
+                ref={text2}
+              >
+                <SForm />
               </div>
             ) : (
               <div className="justify-start flex-col" ref={text2}>
@@ -187,7 +206,7 @@ const Home = () => {
                   First
                 </h1>
 
-                <div className="shadow-2xl">
+                <div className="shadow-2xl hidden md:flex">
                   <GoogleLogin
                     clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
                     render={(renderProps) => (
@@ -195,7 +214,7 @@ const Home = () => {
                         cookiePolicy="single_host_origin"
                         onClick={renderProps.onClick}
                         type="button"
-                        className="dark:bg-mainColor bg-black justify-center p-4 flex items-center rounded-lg outline-none dark:text-black text-white"
+                        className="dark:bg-mainColor bg-black  justify-center p-4 flex items-center rounded-lg outline-none dark:text-black text-white"
                       >
                         <FcGoogle className="mr-4 w-7 h-7" /> Connect to your
                         Google account
