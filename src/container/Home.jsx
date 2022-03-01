@@ -35,7 +35,7 @@ const Home = () => {
         // ease: "back.out(1.7)",
         ease: "elastic.out(1, 0.4)",
       },
-      2
+      1
     );
     tl.from(
       [text2.current],
@@ -47,7 +47,7 @@ const Home = () => {
         duration: 2.5,
         ease: "elastic.out(1, 0.4)",
       },
-      2
+      1
     );
   }, []);
 
@@ -194,7 +194,7 @@ const Home = () => {
           <div className="flex justify-center w-1/2 h-screen items-center ">
             {User ? (
               <div
-                className="justify-start flex md:w-1/2 h-1/2 w-full items-center justify-center"
+                className="justify-start flex md:w-1/2 h-2/3 w-full items-center justify-center"
                 ref={text2}
               >
                 <SForm />
