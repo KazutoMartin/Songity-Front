@@ -4,6 +4,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 
+.nav-font {
+  font-family: "Staatliches", cursive;
+}
+
 .header {
   position: absolute;
   top: 0;

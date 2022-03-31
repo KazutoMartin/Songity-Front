@@ -6,6 +6,7 @@ import { AnimatePresence } from "framer-motion";
 import React from "react";
 import { Sugar } from "react-preloaders2";
 import LoginTemp from "./components/LoginTemp";
+import Services from "./components/Services";
 function App() {
   const location = useLocation();
 
@@ -15,6 +16,7 @@ function App() {
       <Routes location={location} key={location.pathname}>
         <Route path="login" element={<Login />} />
         <Route path="log-temp" element={<LoginTemp />} />
+        <Route path="services" element={<Services />} />
         <Route path="/*" element={<Home />} />
       </Routes>
       {/* <Sugar /> */}

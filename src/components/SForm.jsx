@@ -182,7 +182,7 @@ function SForm() {
           color="secondary"
         /> */}
         <p
-          onClick={handleOpen}
+          onClick={handleOpen}  
           className="flex justify-center cursor-pointer mt-8 dark:text-white text-black hover:text-lime-200 dark:hover:text-slate-500"
         >
           How to fill this form?
