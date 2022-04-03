@@ -70,34 +70,36 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="flex md:hidden flex-row justify-between p-3">
-        {/* <div className="p-2 w-full flex flex-row justify-between items-center shadow-md"> */}
-        {/* <HiMenu
+      <div className="fixed absolute w-screen md:hidden">
+        <div className="flex flex-row justify-between p-3">
+          {/* <div className="p-2 w-full flex flex-row justify-between items-center shadow-md"> */}
+          {/* <HiMenu
           fontSize={60}
           className="cursor-pointer"
           onClick={() => setToggleSidebar(true)}
         /> */}
-        <img
-          className="w-10 h-10"
-          src={List}
-          alt="React Logo"
-          onClick={() => setToggleSidebar(true)}
-        />
-
-        <div className="darkmode-toggle">
-          <DarkModeSwitch
-            checked={darkTheme}
-            onChange={() => setDarkTheme(!darkTheme)}
-            size={50}
+          <img
+            className="w-10 h-10"
+            src={List}
+            alt="React Logo"
+            onClick={() => setToggleSidebar(true)}
           />
-        </div>
-        {/* <Link to={`user-profile/${user?._id}`}>
+
+          <div className="darkmode-toggle">
+            <DarkModeSwitch
+              checked={darkTheme}
+              onChange={() => setDarkTheme(!darkTheme)}
+              size={50}
+            />
+          </div>
+          {/* <Link to={`user-profile/${user?._id}`}>
             <img
               src={user?.image}
               alt="user-pic"
               className="w-9 h-9 rounded-full "
             />
           </Link> */}
+        </div>
       </div>
       {toggleSidebar && (
         <div className="fixed w-4/5 bg-white h-screen overflow-y-auto shadow-md z-10 animate-slide-in">

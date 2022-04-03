@@ -148,84 +148,90 @@ const Home = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.75 }}
     >
-      <div className="bg-lightHeadphone dark:bg-darkHeadphone md:bg-cover md:bg-top bg-center bg-cover">
-        <ToastContainer position="top-center" autoClose={2500} />
-        <Navbar />
+      <div className="overflow-hidden">
+        <div className="bg-lightHeadphone dark:bg-darkHeadphone md:bg-cover md:bg-top bg-center bg-cover">
+          <ToastContainer position="top-center" autoClose={2500} />
+          <Navbar />
 
-        <div
-          // style={{ backgroundImage: `url(${headphone})` }}
-          className="flex flex-row welcome-section h-screen w-screen"
-        >
-          {!User && (
-            <div className="shadow-2xl md:hidden fixed bottom-24 ml-24 w-screen">
-              <GoogleLogin
-                clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
-                render={(renderProps) => (
-                  <button
-                    cookiePolicy="single_host_origin"
-                    onClick={renderProps.onClick}
-                    type="button"
-                    className="dark:bg-mainColor w-1/2 bg-black justify-center p-4 flex items-center rounded-lg outline-none dark:text-black text-white"
-                  >
-                    <FcGoogle className="mr-4 w-7 h-7" />
-                    Sign in
-                  </button>
-                )}
-                onSuccess={onGoogleLoginSuccess}
-                onFailure={responseGoogle}
-              ></GoogleLogin>
-            </div>
-          )}
-          <Footer />
-          <MobileFooter />
-          <div className="flex justify-center w-1/2 h-screen items-center p-10">
-            <div className="justify-start flex-col" ref={text1}>
-              <h1 className="home-title text-4xl sm:text-5xl text-black dark:text-white">
-                Song <br /> Suggestion <br /> Based On
-                <br /> Your MBTI Type!
-              </h1>
-              {/* <p className="text-left mt-5 text-black dark:text-white font-light md:w-9/12 w-11/12 text-base">
+          <div
+            // style={{ backgroundImage: `url(${headphone})` }}
+            className="flex flex-row welcome-section h-screen w-screen"
+          >
+            {!User && (
+              <div className="shadow-2xl md:hidden fixed bottom-24 ml-24 w-screen">
+                <GoogleLogin
+                  clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+                  render={(renderProps) => (
+                    <button
+                      cookiePolicy="single_host_origin"
+                      onClick={renderProps.onClick}
+                      type="button"
+                      className="dark:bg-mainColor w-1/2 bg-black justify-center p-4 flex items-center rounded-lg outline-none dark:text-black text-white"
+                    >
+                      <FcGoogle className="mr-4 w-7 h-7" />
+                      Sign in
+                    </button>
+                  )}
+                  onSuccess={onGoogleLoginSuccess}
+                  onFailure={responseGoogle}
+                ></GoogleLogin>
+              </div>
+            )}
+            <Footer />
+            <MobileFooter />
+            <div className="flex justify-center w-1/2 h-screen items-center p-10">
+              <div className="justify-start flex-col" ref={text1}>
+                <h1 className="home-title text-4xl sm:text-5xl text-black dark:text-white">
+                  Song <br /> Suggestion <br /> Based On
+                  <br /> Your MBTI Type!
+                </h1>
+                {/* <p className="text-left mt-5 text-black dark:text-white font-light md:w-9/12 w-11/12 text-base">
                 Explore the crypto world. Buy and sell cryptocurrencies easily
                 on Krypto.
               </p> */}
-              <img className="w-10 h-10" src={headphoneIcon} alt="React Logo" />
+                <img
+                  className="w-10 h-10"
+                  src={headphoneIcon}
+                  alt="React Logo"
+                />
+              </div>
             </div>
-          </div>
-          <div className="flex justify-center w-1/2 h-screen items-center ">
-            {User ? (
-              <div
-                className="justify-start flex md:w-1/2 h-2/3 w-full items-center justify-center"
-                ref={text2}
-              >
-                <SForm />
-              </div>
-            ) : (
-              <div className="justify-start flex-col" ref={text2}>
-                <h1 className="home-title text-4xl sm:text-5xl text-black dark:text-white">
-                  Connect <br /> To Your <br /> Google Account <br />
-                  First
-                </h1>
-
-                <div className="shadow-2xl hidden md:flex">
-                  <GoogleLogin
-                    clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
-                    render={(renderProps) => (
-                      <button
-                        cookiePolicy="single_host_origin"
-                        onClick={renderProps.onClick}
-                        type="button"
-                        className="dark:bg-mainColor bg-black  justify-center p-4 flex items-center rounded-lg outline-none dark:text-black text-white"
-                      >
-                        <FcGoogle className="mr-4 w-7 h-7" /> Connect to your
-                        Google account
-                      </button>
-                    )}
-                    onSuccess={onGoogleLoginSuccess}
-                    onFailure={responseGoogle}
-                  ></GoogleLogin>
+            <div className="flex justify-center w-1/2 h-screen items-center ">
+              {User ? (
+                <div
+                  className="justify-start flex md:w-1/2 h-2/3 w-full items-center justify-center"
+                  ref={text2}
+                >
+                  <SForm />
                 </div>
-              </div>
-            )}
+              ) : (
+                <div className="justify-start flex-col" ref={text2}>
+                  <h1 className="home-title text-4xl sm:text-5xl text-black dark:text-white">
+                    Connect <br /> To Your <br /> Google Account <br />
+                    First
+                  </h1>
+
+                  <div className="shadow-2xl hidden md:flex">
+                    <GoogleLogin
+                      clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+                      render={(renderProps) => (
+                        <button
+                          cookiePolicy="single_host_origin"
+                          onClick={renderProps.onClick}
+                          type="button"
+                          className="dark:bg-mainColor bg-black  justify-center p-4 flex items-center rounded-lg outline-none dark:text-black text-white"
+                        >
+                          <FcGoogle className="mr-4 w-7 h-7" /> Connect to your
+                          Google account
+                        </button>
+                      )}
+                      onSuccess={onGoogleLoginSuccess}
+                      onFailure={responseGoogle}
+                    ></GoogleLogin>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
