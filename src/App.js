@@ -7,6 +7,7 @@ import React from "react";
 import { Sugar } from "react-preloaders2";
 import LoginTemp from "./components/LoginTemp";
 import Services from "./components/Services";
+import Temp from "./components/Temp";
 function App() {
   const location = useLocation();
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="log-temp" element={<LoginTemp />} />
         <Route path="services" element={<Services />} />
+        <Route path="temp" element={<Temp />} />
         <Route path="/*" element={<Home />} />
       </Routes>
       {/* <Sugar /> */}
