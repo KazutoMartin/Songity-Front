@@ -56,7 +56,7 @@ const Home = () => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Token " + value,
+        // Authorization: "Token " + value,
       },
     };
     console.log("fetching");
